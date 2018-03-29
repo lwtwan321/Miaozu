@@ -14,4 +14,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation supportDependencies.appcompat
+    compile 'com.yanzhenjie:permission:2.0.0-rc4'
 }

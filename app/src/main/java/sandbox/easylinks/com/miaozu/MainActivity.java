@@ -1,5 +1,6 @@
 package sandbox.easylinks.com.miaozu;
 
+
 import sandbox.easylinks.com.miaozu.common.BaseActivity;
 
 public class MainActivity extends BaseActivity {
@@ -14,8 +15,10 @@ public class MainActivity extends BaseActivity {
 
     }
 
+
     @Override
     public void initData() {
-
     }
+
+
 }
