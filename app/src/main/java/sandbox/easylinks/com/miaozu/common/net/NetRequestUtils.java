@@ -7,6 +7,7 @@ import java.util.HashMap;
 import okhttp3.MediaType;
 import sandbox.easylinks.com.widget.okhttp.OkHttpUtils;
 import sandbox.easylinks.com.widget.okhttp.callback.Callback;
+import sandbox.easylinks.com.widget.utils.Utils;
 
 
 public class NetRequestUtils {
@@ -21,8 +22,7 @@ public class NetRequestUtils {
             Callback callback) {
 
         //设置默认头
-//        HashMap defaultHeaderParams = DefaultHeaderUtils.createDefaultHeaders(MyApplication.context, header);
-        HashMap defaultHeaderParams = null;
+        HashMap defaultHeaderParams = DefaultHeaderUtils.createDefaultHeaders(Utils.getApp(), header);
 
         if (OkHttpUtils.METHOD.DELETE.equals(method)) {
             requestDelete(url, defaultHeaderParams, params, callback);
@@ -158,4 +158,66 @@ public class NetRequestUtils {
                 .execute(callback);
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    private void single() {
+//        HashMap params = new HashMap();
+//        NetRequestUtils.request(
+//                baseUrl,
+//                OkHttpUtils.METHOD.GET,
+//                null,
+//                params,
+//                new GenericsCallback<UserBean>(new JsonGenericsSerializator()) {
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//                        LogUtils.d(e.getMessage());
+//                    }
+//
+//                    @Override
+//                    public void onResponse(UserBean response, int id) {
+//                        UserBean userBean = response;
+//                        if (userBean != null) {
+//                            LogUtils.d(userBean.getName());
+//                        }
+//                    }
+//                });
+//    }
+//
+//
+//    private void list() {
+//        NetRequestUtils.request(
+//                baseUrl,
+//                OkHttpUtils.METHOD.GET,
+//                null,
+//                null,
+//                new ListCallback<UserBean>() {
+//
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//                        LogUtils.d(e.getMessage());
+//                    }
+//
+//                    @Override
+//                    public void onResponse(List<UserBean> response, int id) {
+//                        List<UserBean> list = response;
+//                        if (list != null) {
+//                            LogUtils.d(list.size());
+//                        }
+//                    }
+//                });
+//    }
+
 }
