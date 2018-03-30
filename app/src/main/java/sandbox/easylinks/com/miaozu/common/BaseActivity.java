@@ -9,7 +9,7 @@ import butterknife.Unbinder;
 import de.greenrobot.event.EventBus;
 import sandbox.easylinks.com.miaozu.R;
 import sandbox.easylinks.com.miaozu.eventbus.BaseEventBusBean;
-import sandbox.easylinks.com.widget.StatusBarUtil;
+import sandbox.easylinks.com.widget.utils.StatusBarUtil;
 
 public abstract class BaseActivity extends AppCompatActivity {
 

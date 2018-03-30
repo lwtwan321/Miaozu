@@ -1,4 +1,4 @@
-package sandbox.easylinks.com.widget;
+package sandbox.easylinks.com.widget.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -18,6 +18,8 @@ import android.widget.LinearLayout;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+
+import sandbox.easylinks.com.widget.R;
 
 /**
  * Created by Jaeger on 16/2/14.

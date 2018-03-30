@@ -14,5 +14,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation supportDependencies.appcompat
-    compile 'com.yanzhenjie:permission:2.0.0-rc4'
+    implementation 'com.yanzhenjie:permission:2.0.0-rc4'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.alibaba:fastjson:1.2.46'
+//    compile 'com.squareup.okhttp3:okhttp:3.10.0'
 }
