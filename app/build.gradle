@@ -1,9 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion sandbox_compileSdkVersion
     buildToolsVersion sandbox_buildToolsVersion
     flavorDimensions sandbox_flavorDimensions
+
     defaultConfig {
         applicationId "sandbox.easylinks.com.miaozu"
         minSdkVersion sanbox_minSdkVersion
@@ -12,22 +14,49 @@ android {
         versionName sandbox_VersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+
+    signingConfigs {
+        release {
+            storeFile file("miaozu.jks")
+            storePassword "miaozu123456"
+            keyAlias "miaozu"
+            keyPassword "miaozu123456"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
         }
     }
 
 
+
     productFlavors {
-        staging {
+        stagging {
             minSdkVersion 21
             multiDexEnabled false
             manifestPlaceholders = [
                     JPUSH_APPKEY : "46d37fa05bdedfd9478973a0", //JPush上注册的包名对应的appkey.
                     JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
             ]
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def releaseApkName = 'MiaozuApp' + '-' +
+                    android.defaultConfig.versionName + '-' +
+                    variant.productFlavors[0].name.replace('_', '') +
+                    '-' + variant.buildType.name + '.apk'
+            outputFileName = releaseApkName
         }
     }
 }
