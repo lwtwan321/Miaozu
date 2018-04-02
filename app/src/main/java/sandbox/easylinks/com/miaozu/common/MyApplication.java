@@ -10,6 +10,7 @@ import javax.net.ssl.SSLSession;
 
 import okhttp3.OkHttpClient;
 import sandbox.easylinks.com.miaozu.BuildConfig;
+import sandbox.easylinks.com.miaozu.common.net.DomainManager;
 import sandbox.easylinks.com.widget.okhttp.OkHttpUtils;
 import sandbox.easylinks.com.widget.okhttp.https.HttpsUtils;
 import sandbox.easylinks.com.widget.okhttp.log.LoggerInterceptor;
@@ -28,16 +29,18 @@ public class MyApplication extends Application {
         context = this;
         Utils.init(this);
 
-//        ClearableCookieJar cookieJar1 = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
+        //设置环境地址
+        DomainManager.assertInstance();
 
+        //设置网络请求okhttp3
+        //ClearableCookieJar cookieJar1 = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
         HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
-
-//        CookieJarImpl cookieJar1 = new CookieJarImpl(new MemoryCookieStore());
+        //CookieJarImpl cookieJar1 = new CookieJarImpl(new MemoryCookieStore());
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(10000L, TimeUnit.MILLISECONDS)
                 .readTimeout(10000L, TimeUnit.MILLISECONDS)
                 .addInterceptor(new LoggerInterceptor(TAG_URL))
-//                .cookieJar(cookieJar1)
+                //.cookieJar(cookieJar1)
                 .hostnameVerifier(new HostnameVerifier() {
                     @Override
                     public boolean verify(String hostname, SSLSession session) {
@@ -48,6 +51,7 @@ public class MyApplication extends Application {
                 .build();
         OkHttpUtils.initClient(okHttpClient);
 
+        //初始日志
         initLog();
 
     }
