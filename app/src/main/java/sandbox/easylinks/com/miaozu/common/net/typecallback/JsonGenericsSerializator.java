@@ -1,4 +1,4 @@
-package sandbox.easylinks.com.miaozu.common.net;
+package sandbox.easylinks.com.miaozu.common.net.typecallback;
 
 
 import com.alibaba.fastjson.JSON;
