@@ -3,4 +3,17 @@
 
 
 
+
+    <!-- Login -->
+    <string name="str_login_fail">登录失败</string>
+    <string name="str_login_success">登陆成功</string>
+    <string name="str_wechat_login">微信</string>
+    <string name="str_skip_login">先去看看 >></string>
+    <string name="sb_login_phone">请输入手机号码</string>
+    <string name="sb_login_email">请输入邮箱地址</string>
+    <string name="sb_sandbox_welcome_back_tip">欢迎回来,请您继续登录,您的账号:</string>
+    <string name="sb_sandbox_wechat_or_mail">使用微信或邮箱快速登录</string>
+    <string name="str_forgot_password">忘记密码?</string>
+    <string name="str_next">下一步</string>
+
 </resources>

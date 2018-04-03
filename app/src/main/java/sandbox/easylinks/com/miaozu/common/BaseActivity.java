@@ -24,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         //初始化黄油刀控件绑定框架
         bind = ButterKnife.bind(this);
         //设置状态栏
-        setStatusBar();
+//        setStatusBar();
         //初始化控件
         initView();
         //设置数据

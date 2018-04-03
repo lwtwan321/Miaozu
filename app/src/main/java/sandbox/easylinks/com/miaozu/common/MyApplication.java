@@ -2,6 +2,7 @@ package sandbox.easylinks.com.miaozu.common;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,12 +22,10 @@ public class MyApplication extends Application {
 
     private final static String TAG_URL = "TAG_URL";
     private final static String TAG_LOG = "TAG_LOG";
-    public static Context context;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        context = this;
         Utils.init(this);
 
         //设置环境地址
@@ -78,6 +77,12 @@ public class MyApplication extends Application {
             }
         }).start();
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
 }

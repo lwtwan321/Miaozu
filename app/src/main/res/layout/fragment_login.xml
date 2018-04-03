@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/main_framLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--上半部分红色图片区域-->
+        <FrameLayout
+            android:id="@+id/frame_login_cover"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="top">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_bg_login_red" />
+
+            <sandbox.easylinks.com.miaozu.view.CircleImageView
+                android:id="@+id/iv_net_rotate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_login_bg_net" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_login" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/view_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white" />
+
+        <!--底部操作部分-->
+        <LinearLayout
+            android:id="@+id/linear_bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <!--顶部bar-->
+            <LinearLayout
+                android:id="@+id/relative_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/back" />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/sb_font_black"
+                        android:textSize="@dimen/sb_font_size_36_pt"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color" />
+
+            </LinearLayout>
+
+            <!--输入手机号码两行布局-->
+            <LinearLayout
+                android:id="@+id/linear_input_phone"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp">
+
+                <TextView
+                    android:id="@+id/tv_input_phone_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/sb_login_phone"
+                    android:textColor="@color/sb_font_black"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:id="@+id/linear_input_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linear_county_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_county_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+86"
+                                android:textColor="@color/sb_font_black"
+                                android:textSize="@dimen/sb_font_size_30_pt" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_arrow_down" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="left"
+                            android:text="@string/sb_login_phone"
+                            android:textColor="@color/sb_font_black"
+                            android:textSize="@dimen/sb_font_size_30_pt" />
+
+                        <!--<com.easylinks.sandbox.widget.view.ClearEditText-->
+                        <!--android:id="@+id/et_phone_input"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:background="@null"-->
+                        <!--android:hint="123 4567 8900"-->
+                        <!--android:inputType="number"-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:textColor="@color/sb_font_black"-->
+                        <!--android:textSize="@dimen/sb_font_size_30_pt"-->
+                        <!--android:visibility="gone" />-->
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_et_bottom_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/divider_color"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--输入密码界面-->
+            <LinearLayout
+                android:id="@+id/linear_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sb_sandbox_welcome_back_tip"
+                        android:textColor="@color/sb_font_black" />
+
+                    <TextView
+                        android:id="@+id/tv_input_phone_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/sb_font_black" />
+                </LinearLayout>
+
+                <!--<com.easylinks.sandbox.widget.view.ClearEditText-->
+                <!--android:id="@+id/et_password_input"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@null"-->
+                <!--android:hint="@string/sb_login_password"-->
+                <!--android:inputType="textPassword"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:textSize="@dimen/sb_font_size_28_pt" />-->
+            </LinearLayout>
+
+            <!--和底部多方法登入的分割线-->
+            <LinearLayout
+                android:id="@+id/view_method_bottom_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/divider_color" />
+            </LinearLayout>
+
+            <!--底部多方法登入布局-->
+            <RelativeLayout
+                android:id="@+id/linear_multi_login"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:id="@+id/tv_option_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/sb_sandbox_wechat_or_mail"
+                    android:textColor="@color/sb_font_black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_wechat_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_wechat_login" />
+
+                    <ImageView
+                        android:id="@+id/iv_email_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_mailbox_login" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!--下一步按钮-->
+            <LinearLayout
+                android:id="@+id/linear_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/bt_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/red_bgx"
+                    android:enabled="false"
+                    android:text="@string/str_next"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!--忘记密码按钮-->
+            <TextView
+                android:id="@+id/tv_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:text="@string/str_forgot_password"
+                android:textColor="@color/sb_font_666666"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_guest_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/str_skip_login"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+</LinearLayout>

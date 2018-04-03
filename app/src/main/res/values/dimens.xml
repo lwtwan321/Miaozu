@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="sb_font_size_30_pt">15sp</dimen>
+    <dimen name="sb_font_size_24_pt">12sp</dimen>
+    <dimen name="sb_font_size_26_pt">13sp</dimen>
+    <dimen name="sb_font_size_28_pt">14sp</dimen>
+    <dimen name="sb_font_size_36_pt">18sp</dimen>
+</resources>
